@@ -5,7 +5,7 @@ class DatabaseTools < Formula
   version "0.1.0"
 
   def install
+  	puts 'dupa'
     # TODO
-    bin.install "bin/gh_release"
   end
 end
