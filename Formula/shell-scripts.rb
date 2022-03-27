@@ -8,5 +8,6 @@ class ShellScripts < Formula
     bin.install "bin/gh_release"
     bin.install "bin/changelog"
     bin.install "bin/rmtex"
+    bin.install "bin/clsipy"
   end
 end
