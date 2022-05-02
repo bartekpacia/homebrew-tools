@@ -1,3 +1,5 @@
+require "language/node"
+
 class Rewrap < Formula
   desc "Fast and convenient way to keep column width"
   homepage "https://github.com/stkb/Rewrap"
