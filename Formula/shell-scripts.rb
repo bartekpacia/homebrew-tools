@@ -11,6 +11,6 @@ class ShellScripts < Formula
     bin.install "bin/gh_release"
     bin.install "bin/rmtex"
     bin.install "bin/simu"
-    bin.install "bin/source_env"
+    bin.install "bin/srcenv"
   end
 end
