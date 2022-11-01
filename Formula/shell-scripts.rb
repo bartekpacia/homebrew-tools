@@ -8,9 +8,10 @@ class ShellScripts < Formula
     bin.install "bin/changelog"
     bin.install "bin/clsipy"
     bin.install "bin/emu"
+    bin.install "bin/get_ssh_key"
     bin.install "bin/gh_release"
     bin.install "bin/rmtex"
     bin.install "bin/simu"
-    bin.install "bin/srcenv"
+    bin.install "bin/srcenv"    
   end
 end
