@@ -1,7 +1,7 @@
 class ShellScripts < Formula
   desc "Bartek's very own collection of shellscripts"
   homepage "https://github.com/bartekpacia/shell-scripts"
-  url "https://github.com/bartekpacia/shell-scripts.git", tag: "0.1.6", revision: "bb6f32e44c852e481e2b62a6bd225ea10833fed2"
+  url "https://github.com/bartekpacia/shell-scripts.git", tag: "0.2.0", revision: "68463ace92faca85be9a1866f4ada6577a76faa2"
 
   def install
     bin.install "bin/changelog"
