@@ -9,6 +9,7 @@ class Scripts < Formula
     bin.install "bin/emu"
     bin.install "bin/get_ssh_key"
     bin.install "bin/gh_release"
+    bin.install "bin/lenny"
     bin.install "bin/rmtex"
     bin.install "bin/simu"
     bin.install "bin/srcenv"
