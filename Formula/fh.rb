@@ -5,20 +5,20 @@
 class Fh < Formula
   desc "CLI app talking to F&Home API – a smart home system"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.0.5"
+  version "0.0.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.5/fhome_0.0.5_darwin_amd64.tar.gz"
-      sha256 "10a4084e444ba1c3e6070dd5de1b52adc1847462d0f96d5f6531d6a879f0a3fa"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.6/fhome_0.0.6_darwin_amd64.tar.gz"
+      sha256 "8b50e9f250e93eef9a265e539e6b8134bfa4888fa2922cab668aefbbd3805435"
 
       def install
         bin.install "fh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.5/fhome_0.0.5_darwin_arm64.tar.gz"
-      sha256 "e0ced9f52544caa7dc57387c27d653109081317a8b149a81826731d1318c192d"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.6/fhome_0.0.6_darwin_arm64.tar.gz"
+      sha256 "2a87683716c71cb6a5e3d4e5167f1622834be199335436d2d1f5d34c68ab5915"
 
       def install
         bin.install "fh"
@@ -27,17 +27,17 @@ class Fh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.5/fhome_0.0.5_linux_arm64.tar.gz"
-      sha256 "61b5c8a92af8d1a036d195c1540e028a7fbaf5fdf35608840f03da4b9d7eefb1"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.6/fhome_0.0.6_linux_amd64.tar.gz"
+      sha256 "9fa203ad2132b27e6c1225b1fbc3f714fee66ef9fa2fa3fc2f4a90d559b51781"
 
       def install
         bin.install "fh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.5/fhome_0.0.5_linux_amd64.tar.gz"
-      sha256 "b81e081cad84e08115065851c98f2e468ddeb95d96f73ead81cd4b59ef88c8b7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.0.6/fhome_0.0.6_linux_arm64.tar.gz"
+      sha256 "012e8ca30a550ce393564a2859f25346162d8b81d6396b4d08c13ddb390a9f35"
 
       def install
         bin.install "fh"
