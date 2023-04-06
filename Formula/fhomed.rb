@@ -5,21 +5,21 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.0/fhomed_0.1.0_darwin_amd64.tar.gz"
-      sha256 "e8a7cc5b24101e9e705a15a880dc29ac2df4373f3de88d3d1648a0a3f561a39d"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.1/fhomed_0.1.1_darwin_amd64.tar.gz"
+      sha256 "adbdb746879b8efc04b8ad663635a0025578a6f62152b750eb97a8d198a0341a"
 
       def install
         bin.install "fhomed"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.0/fhomed_0.1.0_darwin_arm64.tar.gz"
-      sha256 "05d58b229f3da61a98c3abf6114d11e10070ddaaa0168e315265c6dcc601831f"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.1/fhomed_0.1.1_darwin_arm64.tar.gz"
+      sha256 "7fda5aa97b086bcdd4ed830c7340a816b83bf931b4a1d50d9d40600eea93f3ec"
 
       def install
         bin.install "fhomed"
@@ -28,17 +28,17 @@ class Fhomed < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.0/fhomed_0.1.0_linux_arm64.tar.gz"
-      sha256 "951a8e84867bc48f12edcafd717725590fbc1a6c708b606a4832f5abdc6196d0"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.1/fhomed_0.1.1_linux_amd64.tar.gz"
+      sha256 "0a62525dc8393e4d7fcce9a78f5b2ff7ca34faf937be94e057d4ddf17ee9937c"
 
       def install
         bin.install "fhomed"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.0/fhomed_0.1.0_linux_amd64.tar.gz"
-      sha256 "c1b0433e9ff2e2a996853a1ac52c35dadb0ae1f840223c463af599dea6365460"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.1/fhomed_0.1.1_linux_arm64.tar.gz"
+      sha256 "7f713172e2c974b27132811f6246f729ee18bbb3415aa39c9c6b7d72ceb12888"
 
       def install
         bin.install "fhomed"
