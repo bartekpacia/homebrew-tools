@@ -5,21 +5,21 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhomed_0.1.2_darwin_amd64.tar.gz"
-      sha256 "530fe93a0a632bbfb307a4c78ea3c1ea4bcc4f4c09660014c63d8ceb3f6ef46f"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhomed_0.1.3_darwin_amd64.tar.gz"
+      sha256 "38373e587f4b4d2b6846b8ef3f2e87e35070ab4b63d4ab32b621a6d88b3c0b81"
 
       def install
         bin.install "fhomed"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhomed_0.1.2_darwin_arm64.tar.gz"
-      sha256 "4b2c5ebaf8857ea59d3497b1ca656b367c379c01beddd34d71dccbbdc4010634"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhomed_0.1.3_darwin_arm64.tar.gz"
+      sha256 "b3f78149eeb10f082848acc8c5b462d9323ec46ea44772ba9677d03acf5a447c"
 
       def install
         bin.install "fhomed"
@@ -29,16 +29,16 @@ class Fhomed < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhomed_0.1.2_linux_arm64.tar.gz"
-      sha256 "499743cd26acce5b5d76c1b42140ffa3be4193ca942c685306bff7846bf91571"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhomed_0.1.3_linux_arm64.tar.gz"
+      sha256 "7424ecf622c03d98c9d425aec5a1eb76f9fe25b43dbbe5b30733e79c02b90232"
 
       def install
         bin.install "fhomed"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhomed_0.1.2_linux_amd64.tar.gz"
-      sha256 "14d3c3b3f89bfab7965540a1758f1cb5608596ccdceca40b659464c75b1032ea"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhomed_0.1.3_linux_amd64.tar.gz"
+      sha256 "82ca4bfb50a0b5b7e631868fb307f3495a671267eb2522bc50afbb254117f2ec"
 
       def install
         bin.install "fhomed"
