@@ -5,21 +5,21 @@
 class Fhome < Formula
   desc "Interact with smart home devices connected to F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhome_0.1.2_darwin_arm64.tar.gz"
-      sha256 "dc89ae46e63665f025a369aa57475875b13f98e08aadecee43f1824671e09f33"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhome_0.1.3_darwin_arm64.tar.gz"
+      sha256 "72713bc37715cf6cd1101a16f1ebf33c168f2de726e70ff0d25923300a4153e3"
 
       def install
         bin.install "fhome"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhome_0.1.2_darwin_amd64.tar.gz"
-      sha256 "2440e418f7ca473203ac8e9c0bbb0366558ad8bc4ad094913f85966f4198e76a"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhome_0.1.3_darwin_amd64.tar.gz"
+      sha256 "adc14b0b3cc4bb3a359fe96acf21721c5ecdf4f7387431c6d5c58a6d596f5aee"
 
       def install
         bin.install "fhome"
@@ -29,16 +29,16 @@ class Fhome < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhome_0.1.2_linux_arm64.tar.gz"
-      sha256 "c0d1279e82968184a9137dfd451ad22008411db5d39942d9c5588a33efa06c91"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhome_0.1.3_linux_arm64.tar.gz"
+      sha256 "34cb2b78e90661087679d7080803b475a3196f654dbc46ad1aac858f1bad22fa"
 
       def install
         bin.install "fhome"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.2/fhome_0.1.2_linux_amd64.tar.gz"
-      sha256 "291324c35b948a7eb1d17740a634cde7f17669a5643b43b0d150ecefeb07c8aa"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.3/fhome_0.1.3_linux_amd64.tar.gz"
+      sha256 "21df262c51709145609452df28e82d4453c2606de6f30390317ec9d6fd6f14d8"
 
       def install
         bin.install "fhome"
