@@ -5,43 +5,51 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhomed_0.1.5_darwin_amd64.tar.gz"
-      sha256 "7e9ba202c390df1b699d62054ed7d7546e0beb00d9e7d86a2320660c914d38e2"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhomed_0.1.6_darwin_amd64.tar.gz"
+      sha256 "e3181d2714aed4fef395c2566120bda175b8182cc02bc30ab9c90ea21beb679e"
 
       def install
         bin.install "fhomed"
+        bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhomed_0.1.5_darwin_arm64.tar.gz"
-      sha256 "0005683528ef136757f956ef71b39c15928e23863a95a8e34641d74c540dba31"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhomed_0.1.6_darwin_arm64.tar.gz"
+      sha256 "7c5bedba54f6b39eada91a1c50abc95537726f238830e3e9142aa04da6cd501f"
 
       def install
         bin.install "fhomed"
+        bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhomed_0.1.5_linux_arm64.tar.gz"
-      sha256 "3e7a5b78864f47c2ee7f1a886ca0a523d2b0d19c6435ad7f7237694365f32fd9"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhomed_0.1.6_linux_amd64.tar.gz"
+      sha256 "78d6c85b5149e12653e581809104a9c4e115e76d3192579a9bdf79d2f5f6ee6f"
 
       def install
         bin.install "fhomed"
+        bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhomed_0.1.5_linux_amd64.tar.gz"
-      sha256 "b93e96554090a0ade116c4053dde99754afa80662778468a62585463a33da4d2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhomed_0.1.6_linux_arm64.tar.gz"
+      sha256 "d6dec0429985433f1ed346bf5779ead2424a50b6310e75468c69947528bbc842"
 
       def install
         bin.install "fhomed"
+        bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
   end
