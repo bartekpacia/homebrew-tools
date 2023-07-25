@@ -6,7 +6,6 @@ class Scripts < Formula
   def install
     bin.install "bin/changelog"
     bin.install "bin/clsipy"
-    bin.install "bin/emu"
     bin.install "bin/flutter_fastlane_bump"
     bin.install "bin/get_ssh_key"
     bin.install "bin/gh_release"
