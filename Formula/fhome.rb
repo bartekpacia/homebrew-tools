@@ -5,47 +5,51 @@
 class Fhome < Formula
   desc "Interact with smart home devices connected to F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhome_0.1.5_darwin_amd64.tar.gz"
-      sha256 "4bf8f275c533cf32eb45e4790599675f326564f2503e84d84dbe59f0c2b1ada2"
+    if Hardware::CPU.arm?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhome_0.1.6_darwin_arm64.tar.gz"
+      sha256 "549b42bebea5b066435b7231f2b06b3a4ed47e48ce3984bd830ca1669141de0b"
 
       def install
         bin.install "fhome"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_fhome"
+        bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhome_0.1.5_darwin_arm64.tar.gz"
-      sha256 "564b17b2395e9e151be31e29ebf9615767c0e557c9fb4cfb2cc9e19fced57279"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhome_0.1.6_darwin_amd64.tar.gz"
+      sha256 "65dd67a01f6767dc736b89fbed8c58b3469002fe8b481978587b878a432c4602"
 
       def install
         bin.install "fhome"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_fhome"
+        bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhome_0.1.5_linux_arm64.tar.gz"
-      sha256 "2a50e828a155d79ebce406538257d7ca9f237ca02716741c090955fd131012be"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhome_0.1.6_linux_amd64.tar.gz"
+      sha256 "73a075a960df0284a6fe3a41a93d433c79e442b08a68d0dface03043cd1d83ba"
 
       def install
         bin.install "fhome"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_fhome"
+        bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.5/fhome_0.1.5_linux_amd64.tar.gz"
-      sha256 "0c3e3feb752bb624dfda6abde26f468b49400b0ca2307b637dc954f2bffab9fd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.6/fhome_0.1.6_linux_arm64.tar.gz"
+      sha256 "1aabadd4b957f569dc270fbd083ff09b5e894cd46d94c113725218cd8db938b7"
 
       def install
         bin.install "fhome"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_fhome"
+        bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
+        zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
   end
