@@ -9,9 +9,9 @@ class Fhome < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_darwin_amd64.tar.gz"
-      sha256 "9906bcdb021758da5de9f7ec8c8195f4992a77a9cf4a4ceec079c337d7075393"
+    if Hardware::CPU.arm?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_darwin_arm64.tar.gz"
+      sha256 "7086c4057e786adc00377753fc36fc3e4e4987479284eb60c84445abec329e2d"
 
       def install
         bin.install "fhome"
@@ -19,9 +19,9 @@ class Fhome < Formula
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_darwin_arm64.tar.gz"
-      sha256 "ad7185571a3b8255b285935b20b2c0a1a0d3564d0ff0a49dcdd30562f2b9fc0c"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_darwin_amd64.tar.gz"
+      sha256 "1bcb8a008e47ba121be4d323c0c4d6b1ca9187d0f3f8633bbbbb94c563203601"
 
       def install
         bin.install "fhome"
@@ -34,7 +34,7 @@ class Fhome < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_linux_arm64.tar.gz"
-      sha256 "6da0910df5f7180722cd567efbd615c079e7895a62334bda0e793473d67b17de"
+      sha256 "5ff10a574f269318f5e2ed24f61e77cd062602b9bf0f5699f24ba3d0809c49d5"
 
       def install
         bin.install "fhome"
@@ -44,7 +44,7 @@ class Fhome < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.1.18/fhome_0.1.18_linux_amd64.tar.gz"
-      sha256 "08d1783efb1de176a8865e76fa2963f4673efc8f29eb3f61aadbf0951d2e278b"
+      sha256 "c1f524f3495a79c912e4e3414463cc260827cafa0e59dff9780f0df7d700d6e3"
 
       def install
         bin.install "fhome"
