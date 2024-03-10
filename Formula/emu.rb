@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator."
   homepage "https://github.com/bartekpacia/emu"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.2/emu_0.2.2_darwin_arm64.tar.gz"
-      sha256 "a5edfa72c95dfaa5609adc959db1aa4dbdc39083f104234b29aa86d0848adf03"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.3/emu_0.2.3_darwin_arm64.tar.gz"
+      sha256 "1393bfd808597d2f7341897b36b6c71b2439f8c5d3428b650263fdc018be8834"
 
       def install
         bin.install "emu"
@@ -20,8 +20,8 @@ class Emu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.2/emu_0.2.2_darwin_amd64.tar.gz"
-      sha256 "51403b078a0c62e863d7fd353d29eebc005b031bbc4c1540f83d04f3b64e7a39"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.3/emu_0.2.3_darwin_amd64.tar.gz"
+      sha256 "3d4ce6ad46adc31ee149cc3d8ab83ef285a54da7fd500005205dc412ca7ca37d"
 
       def install
         bin.install "emu"
@@ -33,8 +33,8 @@ class Emu < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.2/emu_0.2.2_linux_arm64.tar.gz"
-      sha256 "027e8b06d983a762dc1bbeab696c6dd37d28cbab87d12fadec67d7efec09e51b"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.3/emu_0.2.3_linux_arm64.tar.gz"
+      sha256 "e0ea84a17770e14915bfaf2fc3d0a97d3dda63c75df4488842ab38814299044f"
 
       def install
         bin.install "emu"
@@ -43,8 +43,8 @@ class Emu < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.2/emu_0.2.2_linux_amd64.tar.gz"
-      sha256 "9ca4c0c4c21f1f5a3b65f929d9289ae606d5ab723b6bc338ec63a02f5eeab913"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.3/emu_0.2.3_linux_amd64.tar.gz"
+      sha256 "8475a72bc3cd74c4cb4b7ac5ab0969052ede3b4289e615def14f3421bc847f39"
 
       def install
         bin.install "emu"
