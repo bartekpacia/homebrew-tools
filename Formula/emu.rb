@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator"
   homepage "https://github.com/bartekpacia/emu"
-  version "0.2.4"
+  version "0.2.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.4/emu_0.2.4_darwin_arm64.tar.gz"
-      sha256 "46535e5b5c364d347e97d7a13c9a3170a74ea0d6294845318d7419620460b05b"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_darwin_amd64.tar.gz"
+      sha256 "023ef40b7903fec3806d5f0898e04b9e2abb8507acbe96dccc3b52004271994a"
 
       def install
         bin.install "emu"
@@ -19,9 +19,9 @@ class Emu < Formula
         zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.4/emu_0.2.4_darwin_amd64.tar.gz"
-      sha256 "89454210198c0edb964406459fabfb4ddc63b83df2dd9eab39be10a01118874d"
+    if Hardware::CPU.arm?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_darwin_arm64.tar.gz"
+      sha256 "b8c5134bb00926bb0339c81c742b0ccca5fc8122ccfdd15e6b9016113ebd3bdd"
 
       def install
         bin.install "emu"
@@ -32,9 +32,9 @@ class Emu < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.4/emu_0.2.4_linux_arm64.tar.gz"
-      sha256 "657a3691348da7bb2e83b3a24f6e9e917a0e1aaa382266fa6115f3f50c24d4b0"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_linux_amd64.tar.gz"
+      sha256 "c2ea58c3dc9ea222fa0df54056ee551f3adb2c11d42ca7645ac81b80cdbb8457"
 
       def install
         bin.install "emu"
@@ -42,9 +42,9 @@ class Emu < Formula
         zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.4/emu_0.2.4_linux_amd64.tar.gz"
-      sha256 "9672f0afed1209b612dc6462678b0374264037712fbc71cd7bb20baba7770ffb"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_linux_arm64.tar.gz"
+      sha256 "e00545505624d4be395a79764789009e74007aebba38f00d9802f5cf48b3f531"
 
       def install
         bin.install "emu"
