@@ -11,7 +11,7 @@ class Emu < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_darwin_amd64.tar.gz"
-      sha256 "023ef40b7903fec3806d5f0898e04b9e2abb8507acbe96dccc3b52004271994a"
+      sha256 "bfa4fef00af1b99b90a7f3c68feefdf06846fa0338f76fd384b8ba79d3576d8f"
 
       def install
         bin.install "emu"
@@ -21,7 +21,7 @@ class Emu < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_darwin_arm64.tar.gz"
-      sha256 "b8c5134bb00926bb0339c81c742b0ccca5fc8122ccfdd15e6b9016113ebd3bdd"
+      sha256 "182c76248dc3fe87ae3cbcab203b29db45a3b67cd3951352049db10b3a95134c"
 
       def install
         bin.install "emu"
@@ -34,7 +34,7 @@ class Emu < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_linux_amd64.tar.gz"
-      sha256 "c2ea58c3dc9ea222fa0df54056ee551f3adb2c11d42ca7645ac81b80cdbb8457"
+      sha256 "c05802eccf6c9425cf362a866db56e89e7a47982b6d62b2cf4c82a3f0b290a70"
 
       def install
         bin.install "emu"
@@ -44,7 +44,7 @@ class Emu < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/bartekpacia/emu/releases/download/v0.2.5/emu_0.2.5_linux_arm64.tar.gz"
-      sha256 "e00545505624d4be395a79764789009e74007aebba38f00d9802f5cf48b3f531"
+      sha256 "bcf394ab4f60cb94ffb0da36009258406d8740743d2cb4a119482454c4a21550"
 
       def install
         bin.install "emu"
