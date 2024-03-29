@@ -11,7 +11,7 @@ class Fhome < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_darwin_amd64.tar.gz"
-      sha256 "4633856aa8fac04cf0d60c2fce93d34e8471139321f1781627fa5f22029a1d12"
+      sha256 "b8f525dba7866b0010151583577c0b70072f4130ff03cd1c135935339d97b299"
 
       def install
         bin.install "fhome"
@@ -21,7 +21,7 @@ class Fhome < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_darwin_arm64.tar.gz"
-      sha256 "963d36abd1d7ff49f08d1e1cfb5ac6d5b30e904b782bdbcb8348375f99127015"
+      sha256 "02d61e8fd84f24dc1cda04fb2ebb77a508c2ff8590aa4300a3641535e7890a09"
 
       def install
         bin.install "fhome"
@@ -32,9 +32,9 @@ class Fhome < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_linux_arm64.tar.gz"
-      sha256 "3455ae6b29e096908740a8b2155aa3aae8a277056bce83a96d5c88eb8793ca2f"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_linux_amd64.tar.gz"
+      sha256 "1a6fc592dbf999bd1519c5fe5ed64a13bd2f27e7686e2647267f7bdffd7f173d"
 
       def install
         bin.install "fhome"
@@ -42,9 +42,9 @@ class Fhome < Formula
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_linux_amd64.tar.gz"
-      sha256 "40e95b8843da37205d12fe6907cb14b6eb6f0bb9bd515349883ee8fdfb2b60d3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.22/fhome_0.1.22_linux_arm64.tar.gz"
+      sha256 "1fe31985a11aecc33b2eb346aefc4b44f5ffd2ce754d279935974bdf746a381e"
 
       def install
         bin.install "fhome"
