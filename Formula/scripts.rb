@@ -1,7 +1,7 @@
 class Scripts < Formula
   desc "Bartek's very own collection of various scripts"
   homepage "https://github.com/bartekpacia/scripts"
-  url "https://github.com/bartekpacia/scripts.git", tag: "v0.4.9", revision: "a8de90aae81ac40a479ab65b2298412478acb297"
+  url "https://github.com/bartekpacia/scripts.git", tag: "v0.5.0", revision: "a8de90aae81ac40a479ab65b2298412478acb297"
 
   def install
     bin.install "bin/changelog"
