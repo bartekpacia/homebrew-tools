@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator"
   homepage "https://github.com/bartekpacia/emu"
-  version "0.2.6"
+  version "0.2.7"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.6/emu_0.2.6_darwin_amd64.tar.gz"
-      sha256 "43073b4794c0852029b9c2a95f8fb50f75da5f8798a8c4ac48cc1f18081b9a18"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.7/emu_0.2.7_darwin_amd64.tar.gz"
+      sha256 "d6a425324c7b3b31b1fc868c9d654f0b3f2b2a9112c0de0e458512aa33d212a4"
 
       def install
         bin.install "emu"
@@ -20,8 +20,8 @@ class Emu < Formula
       end
     end
     on_arm do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.6/emu_0.2.6_darwin_arm64.tar.gz"
-      sha256 "5d184db43ccf5ec3eaedebebd1f11869a71fb13b1bc289922a5b5b5d86191642"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.7/emu_0.2.7_darwin_arm64.tar.gz"
+      sha256 "ca89bac11d7ddbcd075d825d0c1006c215f471dbfc38f515b83a0157692deada"
 
       def install
         bin.install "emu"
@@ -33,8 +33,8 @@ class Emu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.6/emu_0.2.6_linux_amd64.tar.gz"
-      sha256 "2b4601134f730b74b8ef82df084c47488b39715e56e4977cb671d6549ed25ab3"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.7/emu_0.2.7_linux_amd64.tar.gz"
+      sha256 "d29ee1c57cd43244dc807c1869272deefba1abb0547a8ddf8ae77b7a635d9bdc"
 
       def install
         bin.install "emu"
@@ -43,8 +43,8 @@ class Emu < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.6/emu_0.2.6_linux_arm64.tar.gz"
-      sha256 "54d2332f0068f0721e38a91370ec73cff630c8985fdd7fbdfa47a8d42d7aae75"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.7/emu_0.2.7_linux_arm64.tar.gz"
+      sha256 "e04c6f50f6ad1aa6478fd54340074e9d07b1e27a23b47d4b45717389370214fd"
 
       def install
         bin.install "emu"
