@@ -5,32 +5,26 @@
 class Fhome < Formula
   desc "Interact with smart home devices connected to F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.23"
+  version "0.1.24"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.23/fhome_0.1.23_darwin_amd64.tar.gz"
-      sha256 "7d66af9f554233a01448666854c83b3da1a872a65d6a01b121e619cc851de08a"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhome_0.1.24_darwin_amd64.tar.gz"
+      sha256 "9d335f8a7db53622813015d47ee0b36d09a07ee13b768593c3d51054ffd097ab"
 
       def install
-        system("./fhome docs --format man-with-section", :out => ["fhome.1", "w"])
-
         bin.install "fhome"
-        man1.install "fhome.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
     on_arm do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.23/fhome_0.1.23_darwin_arm64.tar.gz"
-      sha256 "90abc4c300b64f25d5d12b2bf6b5a37806de883698cadfc2449eb01e842f6043"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhome_0.1.24_darwin_arm64.tar.gz"
+      sha256 "b41925aa28f1e5990accb9e82fa2899746833cbad14160c04da6851b8f88eadc"
 
       def install
-        system("./fhome docs --format man-with-section", :out => ["fhome.1", "w"])
-
         bin.install "fhome"
-        man1.install "fhome.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
@@ -39,27 +33,21 @@ class Fhome < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.23/fhome_0.1.23_linux_amd64.tar.gz"
-      sha256 "381b926eab5c1577467e9c4dc4835de77eb38c6a79c7658990eb08ba22d1da4e"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhome_0.1.24_linux_amd64.tar.gz"
+      sha256 "9a1b0dd15e38c188a3c21cfaa0a01faf39589ae606e182ef9e487aa6d54102dd"
 
       def install
-        system("./fhome docs --format man-with-section", :out => ["fhome.1", "w"])
-
         bin.install "fhome"
-        man1.install "fhome.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.23/fhome_0.1.23_linux_arm64.tar.gz"
-      sha256 "4ed84d4af79809bf7645e0fba272cebc770a5117e925241661401add585e22c8"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhome_0.1.24_linux_arm64.tar.gz"
+      sha256 "afb19696be1d9a6a03a5011d61ba2da9bbf796313473ec3430d98adf998393a2"
 
       def install
-        system("./fhome docs --format man-with-section", :out => ["fhome.1", "w"])
-
         bin.install "fhome"
-        man1.install "fhome.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhome" => "fhome"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhome" => "_fhome"
       end
