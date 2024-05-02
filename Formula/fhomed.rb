@@ -5,16 +5,17 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.25"
+  version "0.1.26"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_darwin_amd64.tar.gz"
-      sha256 "8bcae00b38f1fe1552b6d60b1365980187fd36e0aeaadfa54cf9829d6dca8126"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.26/fhomed_0.1.26_darwin_amd64.tar.gz"
+      sha256 "a11970e10927ccb7cd1cf622190ccb974682291bf43500f2623bc7d6043c3251"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
         bin.install "fhomed"
         man1.install "fhomed.1"
@@ -23,11 +24,12 @@ class Fhomed < Formula
       end
     end
     on_arm do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_darwin_arm64.tar.gz"
-      sha256 "cc81c33592d86a7873a36e01f05554907055875f98bac5ca88496b3e26c1c892"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.26/fhomed_0.1.26_darwin_arm64.tar.gz"
+      sha256 "999fff5aaa2af5da4e4d8afa2098348614e37910af8419b2589a26abb5d8b3fb"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
         bin.install "fhomed"
         man1.install "fhomed.1"
@@ -39,11 +41,12 @@ class Fhomed < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_linux_amd64.tar.gz"
-      sha256 "75e38e21aa338e92b623014ac16e323b5eb3697af22903ce0eac648f752c88b5"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.26/fhomed_0.1.26_linux_amd64.tar.gz"
+      sha256 "98a63f84e888a254cf5c75371e72c7831fc972c34a20a708f317b0337d09f945"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
         bin.install "fhomed"
         man1.install "fhomed.1"
@@ -52,11 +55,12 @@ class Fhomed < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_linux_arm64.tar.gz"
-      sha256 "b3664f4592e851377feb1d551022bc18abc0940a4464b74d9495d329e4db8979"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.26/fhomed_0.1.26_linux_arm64.tar.gz"
+      sha256 "82594ac4ae1c8d690243041a7a927ac91690fa6884efa19ec1e387d286d66f81"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
         bin.install "fhomed"
         man1.install "fhomed.1"
