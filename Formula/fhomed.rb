@@ -5,32 +5,32 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.1.24"
+  version "0.1.25"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhomed_0.1.24_darwin_amd64.tar.gz"
-      sha256 "d3e5019e5fb7ed391b6f1172489e668aec5f3b19d57da16cc04ef875ad66ed3f"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_darwin_amd64.tar.gz"
+      sha256 "8bcae00b38f1fe1552b6d60b1365980187fd36e0aeaadfa54cf9829d6dca8126"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => ["fhomed.1", "w"])
+        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
 
         bin.install "fhomed"
-        man1.install "fhome.1"
+        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
     on_arm do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhomed_0.1.24_darwin_arm64.tar.gz"
-      sha256 "84fef8819e1e668f857c2e5cfca76142f8b34af3db3aa41e12dbc80cb457f5d3"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_darwin_arm64.tar.gz"
+      sha256 "cc81c33592d86a7873a36e01f05554907055875f98bac5ca88496b3e26c1c892"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => ["fhomed.1", "w"])
+        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
 
         bin.install "fhomed"
-        man1.install "fhome.1"
+        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
@@ -39,27 +39,27 @@ class Fhomed < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhomed_0.1.24_linux_amd64.tar.gz"
-      sha256 "9a6e70feab57c1333cf4a42d270b0f6003e9e42344303236393b67cad88d7f80"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_linux_amd64.tar.gz"
+      sha256 "75e38e21aa338e92b623014ac16e323b5eb3697af22903ce0eac648f752c88b5"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => ["fhomed.1", "w"])
+        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
 
         bin.install "fhomed"
-        man1.install "fhome.1"
+        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.24/fhomed_0.1.24_linux_arm64.tar.gz"
-      sha256 "c91ce0b92ecb43362d114b58688ec9609bff438cf863bb95bdad878d3f6289d0"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.1.25/fhomed_0.1.25_linux_arm64.tar.gz"
+      sha256 "b3664f4592e851377feb1d551022bc18abc0940a4464b74d9495d329e4db8979"
 
       def install
-        system("./fhomed docs --format man-with-section", :out => ["fhomed.1", "w"])
+        system("./fhomed docs --format man-with-section", :out => "fhomed.1")
 
         bin.install "fhomed"
-        man1.install "fhome.1"
+        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
