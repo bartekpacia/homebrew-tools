@@ -15,4 +15,8 @@ class Scripts < Formula
     bin.install "bin/simu"
     bin.install "bin/srcenv"
   end
+
+  test do
+    assert_match "( ͡° ͜ʖ ͡°)\n", shell_output("#{bin}/lenny sly")
+  end
 end
