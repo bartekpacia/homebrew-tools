@@ -11,22 +11,20 @@ class Fhomed < Formula
   on_macos do
     on_intel do
       url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhomed_0.2.0_darwin_amd64.tar.gz"
-      sha256 "c538aef597528b84137d29f1f6c9165aefa4bd09dd07ceab4e5f40d848ce9fd9"
+      sha256 "5226c081344fbe929368edad56bdb4f2b92deca0f2482bed8e30b200d2da4f38"
 
       def install
         bin.install "fhomed"
-        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
     end
     on_arm do
       url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhomed_0.2.0_darwin_arm64.tar.gz"
-      sha256 "90a1924bf47c20a5f739e66b6f29dfbb768160c589a5937c73be911b4d56069b"
+      sha256 "7a93702482477c6f841f58f774a6d98d8efbd233dbd153b39eddcc48fb6a7acf"
 
       def install
         bin.install "fhomed"
-        man1.install "fhomed.1"
         bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
         zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
       end
@@ -37,11 +35,10 @@ class Fhomed < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhomed_0.2.0_linux_amd64.tar.gz"
-        sha256 "0cdbe2a9eac6dc513ba7dabf41ab6827283a0a74a0f2c05e22850082df00dea7"
+        sha256 "17cd7840ee9bf1fd0ccbfa5eaea930196aa95bc22d6f7908ad7dbd77c7496b80"
 
         def install
           bin.install "fhomed"
-          man1.install "fhomed.1"
           bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
           zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
         end
@@ -50,11 +47,10 @@ class Fhomed < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhomed_0.2.0_linux_arm64.tar.gz"
-        sha256 "db572712390ee28eba6eedf4950e41261dfa51c38879bb70bd163a48afc8f934"
+        sha256 "0136018d5b49afd7d9f32cad4c4dbfd9f9fccc93200af7933226faaae8d424cd"
 
         def install
           bin.install "fhomed"
-          man1.install "fhomed.1"
           bash_completion.install "autocomplete/bash_autocomplete_fhomed" => "fhomed"
           zsh_completion.install "autocomplete/zsh_autocomplete_fhomed" => "_fhomed"
         end
