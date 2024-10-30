@@ -11,7 +11,7 @@ class Fhome < Formula
   on_macos do
     on_intel do
       url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhome_0.2.0_darwin_amd64.tar.gz"
-      sha256 "61b198732010793fd7b176d8b7d75e3ede439eef56d9bd4c97f6874af8ff2f12"
+      sha256 "d22845058ae85c67e7f644d0a3976749237183b610289a50aeb808967757e2fb"
 
       def install
         bin.install "fhome"
@@ -21,7 +21,7 @@ class Fhome < Formula
     end
     on_arm do
       url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhome_0.2.0_darwin_arm64.tar.gz"
-      sha256 "a3adb22336cf0e20ac5f8b45d7a775b501d6c5f19d8c721eca019cc7db975b11"
+      sha256 "18a99a04798539eb687baad0f1bd3e1df605fea3f50192c06fe5e95bdcf57675"
 
       def install
         bin.install "fhome"
@@ -35,7 +35,7 @@ class Fhome < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhome_0.2.0_linux_amd64.tar.gz"
-        sha256 "3b270507864dea8c504812cd7ee6c43ae9c9a9e1ff3d4a15d09a7efc6ba7c853"
+        sha256 "c90cb54a78edb2015b555fc0d1c1351aeaa14c4856a4ec1c730692c2493e80ce"
 
         def install
           bin.install "fhome"
@@ -47,7 +47,7 @@ class Fhome < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/bartekpacia/fhome/releases/download/v0.2.0/fhome_0.2.0_linux_arm64.tar.gz"
-        sha256 "6d944dcdefead4f97e8c21c0f9366bdbb63d4b68776b9b47d3ed2fe751aa7948"
+        sha256 "4bd5b1891c64adc6322c17f85ba7931af6b01f4f8085e4a51925a34ba552da8d"
 
         def install
           bin.install "fhome"
