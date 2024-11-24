@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator"
   homepage "https://github.com/bartekpacia/emu"
-  version "0.2.15"
+  version "0.2.16"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.15/emu_0.2.15_darwin_amd64.tar.gz"
-      sha256 "6db8423b827d05a796e100d3f708bd40fb667c40cbcc0d368345e8aa92ee877a"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.16/emu_0.2.16_darwin_amd64.tar.gz"
+      sha256 "9de617bcf6a7342adb0e1d3c2436f53f1b5c816faf9e471e8b4d7604a725bafd"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -19,13 +19,12 @@ class Emu < Formula
 
         bin.install "emu"
         man1.install "emu.1"
-        bash_completion.install "autocomplete/bash_autocomplete" => "emu"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
+        generate_completions_from_executable(bin/"emu", "completion")
       end
     end
     on_arm do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.15/emu_0.2.15_darwin_arm64.tar.gz"
-      sha256 "8c2b888980f1034e6528ebd5dce75865c5f64a6d89f4d19c63fad50fa7185b8b"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.2.16/emu_0.2.16_darwin_arm64.tar.gz"
+      sha256 "cdc8180369a68e2bcaf73629761ac73a8da226edbabff85e5487f2c327931cd4"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -33,8 +32,7 @@ class Emu < Formula
 
         bin.install "emu"
         man1.install "emu.1"
-        bash_completion.install "autocomplete/bash_autocomplete" => "emu"
-        zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
+        generate_completions_from_executable(bin/"emu", "completion")
       end
     end
   end
@@ -42,8 +40,8 @@ class Emu < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.2.15/emu_0.2.15_linux_amd64.tar.gz"
-        sha256 "e50f443ea81672b48527b75cb4b884c89f3ee89a5536e45b688427ff8685a0aa"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.2.16/emu_0.2.16_linux_amd64.tar.gz"
+        sha256 "7bcde5a3f4f3b3caf70995b030df4398b41f922a6d9c831814075745a8937bea"
 
         def install
           man_content = `./emu docs --format man-with-section`
@@ -51,15 +49,14 @@ class Emu < Formula
 
           bin.install "emu"
           man1.install "emu.1"
-          bash_completion.install "autocomplete/bash_autocomplete" => "emu"
-          zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
+          generate_completions_from_executable(bin/"emu", "completion")
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.2.15/emu_0.2.15_linux_arm64.tar.gz"
-        sha256 "a35dd9c4f6df24822e5a7649d9e37fa5da67e308ad3e4a0407bbfd6f325c5eee"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.2.16/emu_0.2.16_linux_arm64.tar.gz"
+        sha256 "bf8643436c53ae2db9bdaaf7f20549d910366564c01481763315312ec477222e"
 
         def install
           man_content = `./emu docs --format man-with-section`
@@ -67,8 +64,7 @@ class Emu < Formula
 
           bin.install "emu"
           man1.install "emu.1"
-          bash_completion.install "autocomplete/bash_autocomplete" => "emu"
-          zsh_completion.install "autocomplete/zsh_autocomplete" => "_emu"
+          generate_completions_from_executable(bin/"emu", "completion")
         end
       end
     end
