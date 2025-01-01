@@ -5,13 +5,13 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.2.8"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.2.8/fhomed_0.2.8_darwin_amd64.tar.gz"
-      sha256 "9fd2af920bdeec8299335dc305c72a30d78703c3d5356b5ac2f98c03eb2ed5b8"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.0/fhomed_0.3.0_darwin_amd64.tar.gz"
+      sha256 "745ae0691a0886e7467f0b3a0418d48118353c097b01ce93debb91852925d1e1"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -23,9 +23,9 @@ class Fhomed < Formula
         man1.install "fhomed.1"
       end
     end
-    on_arm do
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.2.8/fhomed_0.2.8_darwin_arm64.tar.gz"
-      sha256 "9aba004d6eba77ee6554d946ec51f94ee25c5e8cb9653d869059ba1438d3d505"
+    if Hardware::CPU.arm?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.0/fhomed_0.3.0_darwin_arm64.tar.gz"
+      sha256 "4da74f2e2785137dd3e904ff96d40ca22570344be77de220a07711c440d615ea"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -40,10 +40,10 @@ class Fhomed < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/fhome/releases/download/v0.2.8/fhomed_0.2.8_linux_amd64.tar.gz"
-        sha256 "b7c495d3d7e3bcc42767dc99046c01375c90271ed8c36072252425d4f18d7336"
+        url "https://github.com/bartekpacia/fhome/releases/download/v0.3.0/fhomed_0.3.0_linux_amd64.tar.gz"
+        sha256 "12c361399a803a867e88c634cf2d119ca9f367d1db75d87a2311cb5868877f33"
 
         def install
           man_content = `./fhomed docs --format man-with-section`
@@ -56,10 +56,10 @@ class Fhomed < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/fhome/releases/download/v0.2.8/fhomed_0.2.8_linux_arm64.tar.gz"
-        sha256 "86459484d19f7726dae6fab80804e1a8f87cf72aa7cdd87ca738bd96fcea32b8"
+        url "https://github.com/bartekpacia/fhome/releases/download/v0.3.0/fhomed_0.3.0_linux_arm64.tar.gz"
+        sha256 "03ad18c07f40884d5fb8429c1618f40fa43f8c4acc030944a436a7946cbf56fb"
 
         def install
           man_content = `./fhomed docs --format man-with-section`
