@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator"
   homepage "https://github.com/bartekpacia/emu"
-  version "0.2.18"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.18/emu_0.2.18_darwin_amd64.tar.gz"
-      sha256 "ece1a79d678e5a08f468627fa13f685565c03ed3004719d07969a9e00ee0e22f"
+    if Hardware::CPU.intel?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_darwin_amd64.tar.gz"
+      sha256 "f996dfb014afa50230d0cb8765c4021b34ce8bac49976bd1fe6dc4fd1eb7a692"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -23,9 +23,9 @@ class Emu < Formula
         man1.install "emu.1"
       end
     end
-    on_arm do
-      url "https://github.com/bartekpacia/emu/releases/download/v0.2.18/emu_0.2.18_darwin_arm64.tar.gz"
-      sha256 "66a627b1dd3a562690fb59bdf65590340f89ad0b8f5e46acbc2455fb01ce0060"
+    if Hardware::CPU.arm?
+      url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_darwin_arm64.tar.gz"
+      sha256 "bf7110ee0fb9a3eb75fd098b1e7a4a3d45a63860edc1113da50576759f52208b"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -40,10 +40,10 @@ class Emu < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.2.18/emu_0.2.18_linux_amd64.tar.gz"
-        sha256 "ce8adf5631e015377c4a2602424b2d2a005ccf3e021ba52ba31c93855d5c06c7"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_linux_amd64.tar.gz"
+        sha256 "6cd53b1cb76ac41a35410e83ce2e42d0293c614305da16b85ffb8eb143680135"
 
         def install
           man_content = `./emu docs --format man-with-section`
@@ -56,10 +56,10 @@ class Emu < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.2.18/emu_0.2.18_linux_arm64.tar.gz"
-        sha256 "9187f7e2a075333ffc31767a2a4b3b6bfa90e6e9d4b1776ab3581c96656a6031"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_linux_arm64.tar.gz"
+        sha256 "ca6233ff453cad901c1664f34e364233194e202587fb29dbfcf7de4f7a69736e"
 
         def install
           man_content = `./emu docs --format man-with-section`
