@@ -5,13 +5,13 @@
 class Emu < Formula
   desc "Handy mini-CLI for more pleasant work with Android Emulator"
   homepage "https://github.com/bartekpacia/emu"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_darwin_amd64.tar.gz"
-      sha256 "f996dfb014afa50230d0cb8765c4021b34ce8bac49976bd1fe6dc4fd1eb7a692"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.3.1/emu_0.3.1_darwin_amd64.tar.gz"
+      sha256 "2df3c378160e5c99ff5d883995ac62dce19d884fadc28eb934250db36917b697"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -24,8 +24,8 @@ class Emu < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_darwin_arm64.tar.gz"
-      sha256 "bf7110ee0fb9a3eb75fd098b1e7a4a3d45a63860edc1113da50576759f52208b"
+      url "https://github.com/bartekpacia/emu/releases/download/v0.3.1/emu_0.3.1_darwin_arm64.tar.gz"
+      sha256 "5f9265856cf5f95a1fec7369b0c2003aa377479c5c8eb67197431c464d53b265"
 
       def install
         man_content = `./emu docs --format man-with-section`
@@ -42,8 +42,8 @@ class Emu < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_linux_amd64.tar.gz"
-        sha256 "6cd53b1cb76ac41a35410e83ce2e42d0293c614305da16b85ffb8eb143680135"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.3.1/emu_0.3.1_linux_amd64.tar.gz"
+        sha256 "b41712f7bd5cf7cb419200fe62ab040b1ad35e58fdfe141a86aa4235aa3f9f00"
 
         def install
           man_content = `./emu docs --format man-with-section`
@@ -58,8 +58,8 @@ class Emu < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/emu/releases/download/v0.3.0/emu_0.3.0_linux_arm64.tar.gz"
-        sha256 "ca6233ff453cad901c1664f34e364233194e202587fb29dbfcf7de4f7a69736e"
+        url "https://github.com/bartekpacia/emu/releases/download/v0.3.1/emu_0.3.1_linux_arm64.tar.gz"
+        sha256 "3bad7e4420dc41d564fa3190bbf3a771ba2842a880ecbe70e050084490ceddb4"
 
         def install
           man_content = `./emu docs --format man-with-section`
