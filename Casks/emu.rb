@@ -14,22 +14,22 @@ cask "emu" do
   on_macos do
     on_intel do
       url "https://github.com/bartekpacia/emu/releases/download/v#{version}/emu_#{version}_darwin_amd64.tar.gz"
-      sha256 "281c5b4a11293f0ba966e85ac7597329993188d6317cc5072bbba6e4e983c16b"
+      sha256 "c14ab99e7d9ec5d8cffdf655694f97a5f819c30d1de14b9d4d51a4daec578ea3"
     end
     on_arm do
       url "https://github.com/bartekpacia/emu/releases/download/v#{version}/emu_#{version}_darwin_arm64.tar.gz"
-      sha256 "71618f7e03456a75b37fe8b16b4ecc9ac9da640d50c0f7bb449ed9a4ed71536b"
+      sha256 "b3d37a9acd009716ccc33bd7a28d19f605ab7ecd5eb1a79f06e8f05502417524"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/bartekpacia/emu/releases/download/v#{version}/emu_#{version}_linux_amd64.tar.gz"
-      sha256 "67a89a1fafae992d0656295805a12e440255f0f1910cab22f8805a34e12f4825"
+      sha256 "a579ad1313061106704e38ac8988e909c7f33b097b51a10e32a1bab35dd05804"
     end
     on_arm do
       url "https://github.com/bartekpacia/emu/releases/download/v#{version}/emu_#{version}_linux_arm64.tar.gz"
-      sha256 "9362ac1b5f10bc602057bce6bd0f3d5f5f0011803b66ba06aa7d9aca414cf9e9"
+      sha256 "6a7d6165c0abed46627390bb94f6f3451bd0f433cd21c9c7f059c1b4aba8391f"
     end
   end
 
