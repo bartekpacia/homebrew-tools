@@ -11,7 +11,7 @@ class Fhomed < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_darwin_amd64.tar.gz"
-      sha256 "36a4801a416e17aa2b35ec99de50654f17fa280f2315376676e2eadb48ed2547"
+      sha256 "c2f4e577a54d2cad4d7d39550e49b1482ab56898152911f4cad89af1bbd0482a"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -25,7 +25,7 @@ class Fhomed < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_darwin_arm64.tar.gz"
-      sha256 "796c4b109a205dea5e2643fe83eaa9b4396ac4cc1ed88e3e20c4e136e5e8c1ef"
+      sha256 "f4bf3cdf3cb3f2d5d3a6185dcbd00f8adbee23911305880d63948059f365e0ca"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -42,7 +42,7 @@ class Fhomed < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_linux_amd64.tar.gz"
-      sha256 "c57b9227b13d6b3179ac7b777cac216ee75c3d50adf99bd7afa084b8ee59efd6"
+      sha256 "10debd282ad847858c2fe0ce31f114f5971165fe40763a19fcb643fd705508cb"
       def install
         man_content = `./fhomed docs --format man-with-section`
         File.write("fhomed.1", man_content)
@@ -55,7 +55,7 @@ class Fhomed < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_linux_arm64.tar.gz"
-      sha256 "57158bb98c63792c20db656a93c7fafe72e003757952419e31fc46c2723211d2"
+      sha256 "d4ba160a0d34c3076ed68e95f8701a3b853973e5597248ce151a8203759983d6"
       def install
         man_content = `./fhomed docs --format man-with-section`
         File.write("fhomed.1", man_content)
