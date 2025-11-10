@@ -5,13 +5,13 @@
 class Fhomed < Formula
   desc "Background daemon for F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.3.3"
+  version "0.3.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.3/fhomed_0.3.3_darwin_amd64.tar.gz"
-      sha256 "b2dc1ae954d45e1c882c41d8224a97846cc9e3c8ed5d031eac97657dd845fe37"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_darwin_amd64.tar.gz"
+      sha256 "36a4801a416e17aa2b35ec99de50654f17fa280f2315376676e2eadb48ed2547"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -24,8 +24,8 @@ class Fhomed < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.3/fhomed_0.3.3_darwin_arm64.tar.gz"
-      sha256 "1f129631fb58ab8110d56930acd9161b0e189b7be315c13fb825676b6566e2f6"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_darwin_arm64.tar.gz"
+      sha256 "796c4b109a205dea5e2643fe83eaa9b4396ac4cc1ed88e3e20c4e136e5e8c1ef"
 
       def install
         man_content = `./fhomed docs --format man-with-section`
@@ -40,36 +40,30 @@ class Fhomed < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/fhome/releases/download/v0.3.3/fhomed_0.3.3_linux_amd64.tar.gz"
-        sha256 "90c015966a13545154788cd7aea73b8fe17649a6f2bd91288b80fccabb8cfe31"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_linux_amd64.tar.gz"
+      sha256 "c57b9227b13d6b3179ac7b777cac216ee75c3d50adf99bd7afa084b8ee59efd6"
+      def install
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
-        def install
-          man_content = `./fhomed docs --format man-with-section`
-          File.write("fhomed.1", man_content)
+        bin.install "fhomed"
+        generate_completions_from_executable(bin/"fhomed", "completion")
 
-          bin.install "fhomed"
-          generate_completions_from_executable(bin/"fhomed", "completion")
-
-          man1.install "fhomed.1"
-        end
+        man1.install "fhomed.1"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/bartekpacia/fhome/releases/download/v0.3.3/fhomed_0.3.3_linux_arm64.tar.gz"
-        sha256 "665f1a37c06163ba97e9830e2494d9de2d520907bdf7a49ca4fec8becd8118b2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhomed_0.3.4_linux_arm64.tar.gz"
+      sha256 "57158bb98c63792c20db656a93c7fafe72e003757952419e31fc46c2723211d2"
+      def install
+        man_content = `./fhomed docs --format man-with-section`
+        File.write("fhomed.1", man_content)
 
-        def install
-          man_content = `./fhomed docs --format man-with-section`
-          File.write("fhomed.1", man_content)
+        bin.install "fhomed"
+        generate_completions_from_executable(bin/"fhomed", "completion")
 
-          bin.install "fhomed"
-          generate_completions_from_executable(bin/"fhomed", "completion")
-
-          man1.install "fhomed.1"
-        end
+        man1.install "fhomed.1"
       end
     end
   end
