@@ -5,24 +5,24 @@
 class Fhome < Formula
   desc "Interact with smart home devices connected to F&Home"
   homepage "https://github.com/bartekpacia/fhome"
-  version "0.3.4"
+  version "0.3.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhome_0.3.4_darwin_amd64.tar.gz"
-      sha256 "8a2ae775849aedb6259ea31af4c0e3da337a7eeee1bdd497d53dde67793fc4fc"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.5/fhome_0.3.5_darwin_amd64.tar.gz"
+      sha256 "17a37f23df1defb33517c9bdd22d864f5eacd3b58239baade9ffde7cd1b4d2b5"
 
-      def install
+      define_method(:install) do
         bin.install "fhome"
         generate_completions_from_executable(bin/"fhome", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhome_0.3.4_darwin_arm64.tar.gz"
-      sha256 "bef534f15e7766dd54b379fe71970c3ed9111ab2f2ce86d66d38549807cabae0"
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.5/fhome_0.3.5_darwin_arm64.tar.gz"
+      sha256 "0933fca3a4f5df8f4c82d9c84cb829f6dfb723b8a8e120afafbf4b9ea6d36332"
 
-      def install
+      define_method(:install) do
         bin.install "fhome"
         generate_completions_from_executable(bin/"fhome", "completion")
       end
@@ -31,17 +31,17 @@ class Fhome < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhome_0.3.4_linux_amd64.tar.gz"
-      sha256 "ead3e5016ab8dfa843266da9bc443d86f484cdfe1890476b6b6b02f428f4c86d"
-      def install
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.5/fhome_0.3.5_linux_amd64.tar.gz"
+      sha256 "bfcc326b401e38fd5e9736b6cf97656609a2daa5b77457f2046b7e0548d5914b"
+      define_method(:install) do
         bin.install "fhome"
         generate_completions_from_executable(bin/"fhome", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.4/fhome_0.3.4_linux_arm64.tar.gz"
-      sha256 "699be5fae23ce23443d4ef704be4df5b89bdeb0e5c403e05b0ef812bf8526ebf"
-      def install
+      url "https://github.com/bartekpacia/fhome/releases/download/v0.3.5/fhome_0.3.5_linux_arm64.tar.gz"
+      sha256 "b3d6d5011bb0fffdec2bb84fd667fa6ec6cf00489a838ece8e4e69f23c507711"
+      define_method(:install) do
         bin.install "fhome"
         generate_completions_from_executable(bin/"fhome", "completion")
       end
